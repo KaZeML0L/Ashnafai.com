@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Ashnafai</title>
+  <meta name="description" content="Privacy Policy for Ashnafai — Digital Intelligence Studio.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'><rect width='72' height='72' fill='%23080810'/><polygon points='36,5 5,64 67,64' fill='none' stroke='%23C9A84C' stroke-width='2.2' stroke-linejoin='round'/><line x1='19' y1='52' x2='53' y2='52' stroke='%23C9A84C' stroke-width='2.2'/><line x1='36' y1='12' x2='36' y2='52' stroke='%23F0EDE8' stroke-width='1.4' stroke-dasharray='3.5,3.5'/><circle cx='36' cy='5' r='2.5' fill='%23C9A84C'/></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@700;800&family=DM+Mono:wght@300;400&display=swap');
+    :root {
+      --black: #080810;
+      --white: #F0EDE8;
+      --gold: #C9A84C;
+      --gold-soft: #E8D5A3;
+      --gold-5: rgba(201,168,76,0.05);
+      --gold-10: rgba(201,168,76,0.10);
+      --gold-20: rgba(201,168,76,0.20);
+      --white-50: rgba(240,237,232,0.50);
+      --white-30: rgba(240,237,232,0.30);
+      --white-15: rgba(240,237,232,0.15);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Mono', monospace;
+      cursor: none;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
+    .cursor {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 32px; height: 32px;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9997;
+      transform: translate(-50%, -50%);
+      transition: left 0.12s ease-out, top 0.12s ease-out;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      transition: padding 0.4s, background 0.4s, border-color 0.4s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      padding: 18px 48px;
+      background: rgba(8,8,16,0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--gold-10);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      opacity: 0;
+      animation: fadeDown 0.7s 0.1s forwards;
+    }
+    .nav-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+      opacity: 0;
+      animation: fadeDown 0.7s 0.2s forwards;
+    }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--white-50);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      opacity: 0;
+      animation: fadeDown 0.7s 0.3s forwards;
+    }
+    .btn-nav {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      border: none;
+      padding: 10px 20px;
+      cursor: none;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-nav:hover { opacity: 0.85; }
+    .hero {
+      min-height: 46vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 140px 48px 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.3s forwards;
+    }
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin-bottom: 20px;
+    }
+    .hero-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--white-30);
+    }
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-20), transparent);
+    }
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px 120px;
+    }
+    .section {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 48px;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--gold-10);
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .section.visible { opacity: 1; transform: none; }
+    .section:last-child { border-bottom: none; }
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      opacity: 0.5;
+      padding-top: 4px;
+    }
+    .section-body h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .section-body p {
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 2;
+      color: var(--white-50);
+      margin-bottom: 14px;
+    }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body ul { list-style: none; margin: 14px 0; }
+    .section-body ul li {
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 2;
+      color: var(--white-50);
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .section-body ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+    .section-body a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      transition: border-color 0.2s;
+    }
+    .section-body a:hover { border-color: var(--gold); }
+    footer {
+      border-top: 1px solid var(--gold-10);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--white-30);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--white-30);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 20px 24px; }
+      nav.scrolled { padding: 14px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 120px 24px 48px; }
+      .content { padding: 60px 24px 80px; }
+      .section { grid-template-columns: 1fr; gap: 12px; padding: 40px 0; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="/" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="36,5 5,64 67,64" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linejoin="round"/>
+        <line x1="19" y1="52" x2="53" y2="52" stroke="#C9A84C" stroke-width="2.2"/>
+        <line x1="36" y1="12" x2="36" y2="52" stroke="#F0EDE8" stroke-width="1.4" stroke-dasharray="3.5,3.5"/>
+        <circle cx="36" cy="5" r="2.5" fill="#C9A84C"/>
+      </svg>
+      <span class="nav-wordmark">Ashnafai</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#process">Process</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="/#contact" class="btn-nav">Start Project</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <div class="gold-rule"></div>
+    <p class="hero-meta">Effective Date: March 29, 2026 &nbsp;·&nbsp; Last Updated: March 29, 2026</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="content">
+    <div class="section">
+      <div class="section-number">01</div>
+      <div class="section-body">
+        <h2>Introduction</h2>
+        <p>Ashnafai ("we," "our," or "us") operates ashnafai.com and its subdomains, including trade.ashnafai.com. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+        <p>By accessing or using our services, you agree to the collection and use of information in accordance with this policy. If you do not agree, please discontinue use of our services.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">02</div>
+      <div class="section-body">
+        <h2>Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+          <li>Information you provide directly, such as name, email address, and payment details when subscribing to our services</li>
+          <li>Usage data including pages visited, time spent, browser type, and IP address</li>
+          <li>Communication data if you contact us directly</li>
+          <li>Technical data such as device information, cookies, and session data</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">03</div>
+      <div class="section-body">
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide, operate, and maintain our services</li>
+          <li>Process transactions and send related information</li>
+          <li>Send administrative information, updates, and security alerts</li>
+          <li>Respond to comments and questions</li>
+          <li>Analyze usage to improve our services</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">04</div>
+      <div class="section-body">
+        <h2>Cookies & Tracking</h2>
+        <p>We use cookies and similar tracking technologies to track activity on our services and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.</p>
+        <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, some portions of our services may not function properly.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">05</div>
+      <div class="section-body">
+        <h2>Data Sharing & Disclosure</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties. We may share information with trusted third parties who assist us in operating our website and services, subject to confidentiality agreements. These include:</p>
+        <ul>
+          <li>Payment processors for transaction handling</li>
+          <li>Analytics providers to understand service usage</li>
+          <li>Hosting and infrastructure providers</li>
+        </ul>
+        <p>We may also disclose your information when required by law or to protect our rights.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">06</div>
+      <div class="section-body">
+        <h2>Data Retention</h2>
+        <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">07</div>
+      <div class="section-body">
+        <h2>Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">08</div>
+      <div class="section-body">
+        <h2>Your Rights</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+        <ul>
+          <li>The right to access the personal information we hold about you</li>
+          <li>The right to request correction of inaccurate data</li>
+          <li>The right to request deletion of your personal data</li>
+          <li>The right to object to or restrict processing of your data</li>
+          <li>The right to data portability</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at the email below.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">09</div>
+      <div class="section-body">
+        <h2>Third-Party Links</h2>
+        <p>Our services may contain links to third-party websites. We have no control over the content, privacy policies, or practices of any third-party sites and assume no responsibility for them.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">10</div>
+      <div class="section-body">
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the effective date. Your continued use of our services after any changes constitutes acceptance of the updated policy.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-number">11</div>
+      <div class="section-body">
+        <h2>Contact</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+        <p><a href="mailto:hello@ashnafai.com">hello@ashnafai.com</a></p>
+        <p>ashnafai.com</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <svg width="20" height="20" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="36,5 5,64 67,64" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linejoin="round"/>
+        <line x1="19" y1="52" x2="53" y2="52" stroke="#C9A84C" stroke-width="2.2"/>
+        <line x1="36" y1="12" x2="36" y2="52" stroke="#F0EDE8" stroke-width="1.4" stroke-dasharray="3.5,3.5"/>
+        <circle cx="36" cy="5" r="2.5" fill="#C9A84C"/>
+      </svg>
+      <span class="footer-copy">© 2026 Ashnafai. All rights reserved.</span>
+    </div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:hello@ashnafai.com">hello@ashnafai.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animCursor() {
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
