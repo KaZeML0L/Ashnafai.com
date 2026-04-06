@@ -1,1 +1,20 @@
-node_modules
+# Dependencies
+node_modules/
+trade/node_modules/
+
+# Next.js build output
+.next/
+trade/.next/
+
+# Claude Code
+.claude/
+
+# Misc
+.DS_Store
+*.pem
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
