@@ -44,9 +44,31 @@ export default function Nav() {
         transition: "border-color 0.3s",
       }}
     >
-      <Link href="/" aria-label="Ashnafai Trade Home">
-        <Logo />
-      </Link>
+      {/* Left: trade logo + parent brand link */}
+      <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <Link href="/" aria-label="Ashnafai Trade Home">
+          <Logo />
+        </Link>
+        <a
+          href="https://ashnafai.com"
+          style={{
+            fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
+            fontSize: "9px",
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--gold)",
+            opacity: 0.7,
+            transition: "opacity 0.2s",
+            whiteSpace: "nowrap",
+            paddingLeft: "20px",
+            borderLeft: "1px solid rgba(201,168,76,0.2)",
+          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "0.7"; }}
+        >
+          by ASHNAFAI
+        </a>
+      </div>
 
       <ul style={{ display: "flex", gap: "36px", listStyle: "none", margin: 0, padding: 0 }}
           className="hidden md:flex">
