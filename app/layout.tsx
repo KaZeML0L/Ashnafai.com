@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Syne, DM_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Loader from "@/components/Loader";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -110,6 +111,7 @@ export default function RootLayout({
         <Loader />
         <CustomCursor />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
